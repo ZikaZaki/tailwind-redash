@@ -1,17 +1,28 @@
 <template>
   <div class="flex h-full">
-    <!-- Main Navbar -->
-    <MainNav />
+    <!-- Main Side-Navbar -->
+    <aside>
+      <MainSideNav />
+    </aside>
 
-    <router-view />
+    <!-- Header - TopNavigation -->
+    <main class="w-full p-4 lg:p-10">
+      <header>
+        <TopNav />
+      </header>
+
+      <router-view />
+    </main>
+
   </div>
 </template>
 
 <script>
-import MainNav from "./components/MainNav.vue";
+import MainSideNav from "./components/MainSideNav.vue";
+import TopNav from "./components/TopNav/TopNav.vue";
 
 export default {
   name: "App",
-  components: { MainNav },
+  components: { MainSideNav, TopNav },
 };
 </script>

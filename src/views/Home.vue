@@ -1,6 +1,6 @@
  <template>
-  <div class="w-full p-4 lg:p-10">
-    <div class="bg-gray-300 rounded-xl h-14">search</div>
+  <div class="w-full">
+    <!-- <div class="bg-gray-300 rounded-xl h-14">search</div> -->
 
     <div class="bg-gray-300 rounded-xl mt-4 lg:hidden p-2">
       <button class="block w-32 h-10 bg-blue-600 mx-auto" @click="showSidebar = !showSidebar">
