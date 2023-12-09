@@ -1,60 +1,34 @@
 <template>
   <div class="flex h-full">
     <div class="fixed lg:static bottom-0 w-full lg:w-24 lg:h-full z-10">
-      <div class="relative w-full lg:w-24 h-full bg-blue-800">
-        <a href="#" class="hidden absolute top-10 left-1/2 transform -translate-x-1/2 lg:block w-14 h-14 bg-yellow-300 rounded-xl"></a>
+      <!-- relative w-full lg:w-24 h-full bg-blue-800 -->
+      <div class="relative w-full lg:w-20 h-full bg-blue-800">
+        <a href="#" class="group hidden absolute top-10 left-1/2 transform -translate-x-1/2 lg:flex lg:justify-center lg:items-center w-14 h-14 rounded-xl hover:bg-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 381"
+            preserveAspectRatio="xMidYMid"
+            class="h-12 w-12 text-white"
+          >
+            <path d="M131.015 126.065l117.088.003-117.088 115.396V126.065" fill="#FFF" class="group-hover:fill-gray-400" />
+            <path d="M.002 256.489h116.672L.002 374.955V256.489M.001 119.581L121.948 0l.061 121.501L.001 243.185V119.581M256.001 131.733v124.388L131.02 380.188V255.832l124.981-124.099z"  class="fill-[#F7852F]"/>
+            <path d="M121.909 246.908l-113.513-.003L121.909 133.32v113.588" class="fill-[#1746A2]"/>
+          </svg>
+        </a>
   
-        <div class="flex lg:flex-col items-center justify-center h-full space-x-4 lg:space-x-0 lg:space-y-4 py-4">
-          <a href="#" class="block w-14 h-14 bg-white rounded-xl"></a>
-          <a href="#" class="block w-14 h-14 bg-white rounded-xl"></a>
-          <a href="#" class="block w-14 h-14 bg-white rounded-xl"></a>
-          <a href="#" class="block w-14 h-14 bg-white rounded-xl"></a>
-        </div>
+        <MainNav />
       </div>
     </div>
 
-    <div class="w-full p-4 lg:p-10">
-      <div class="bg-gray-300 rounded-xl h-14">search</div>
-
-      <div class="bg-gray-300 rounded-xl mt-4 lg:hidden p-2">
-        <button class="block w-32 h-10 bg-blue-600 mx-auto" @click="showSidebar = !showSidebar">
-          Toggle sidebar
-        </button>
-      </div>
-
-      <div class="overflow-hidden">
-        <div class="transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
-          <div class="flex mt-4 lg:mt-10 lg:space-x-10">
-            <div class="w-full flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-xl">
-              <div class="flex space-x-4 lg:space-x-10">
-                <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-                <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-                <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-              </div>
-    
-              <div class="bg-gray-300 rounded-xl h-28 mt-4 lg:mt-10 w-full"></div>
-    
-              <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-10">
-                <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-                <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-              </div>
-            </div>
-            <div class="w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink bg-gray-300 rounded-xl h-52">sidebar</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
+import MainNav from "./components/MainNav.vue";
+
 export default {
   name: "App",
-  components: {},
-  data: function(){
-    return {
-      showSidebar: false,
-    }
-  }
+  components: { MainNav },
 };
 </script>
