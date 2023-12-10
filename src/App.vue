@@ -5,7 +5,7 @@
       <MainSideNav />
     </aside>
 
-    <main class="w-full p-4 lg:p-10 lg:rounded-l-3xl bg-white">
+    <main class="w-full p-4 lg:p-10 lg:rounded-l-[45px] bg-white">
       <!-- Header - TopNavigation -->
       <header>
         <TopNav />
