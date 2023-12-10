@@ -1,19 +1,18 @@
 <template>
   <div class="flex h-full">
-    <!-- Main Side-Navbar -->
     <aside>
+      <!-- Main - Side-Navbar -->
       <MainSideNav />
     </aside>
 
-    <!-- Header - TopNavigation -->
     <main class="w-full p-4 lg:p-10">
+      <!-- Header - TopNavigation -->
       <header>
         <TopNav />
       </header>
 
       <router-view />
     </main>
-
   </div>
 </template>
 
