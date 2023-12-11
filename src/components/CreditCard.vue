@@ -1,12 +1,12 @@
 <template>
-  <div class="group rounded-2xl w-full h-full [perspective:1000px]">
+  <div class="group flex w-full h-full max-w-[400px] max-h-[280px] [perspective:1000px] rounded-2xl">
     <div class="relative h-full w-full rounded-2xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <div class="front absolute inset-0 h-full w-full card-bg text-white font-[inconsolata] text-shadow rounded-2xl shadow-md shadow-black/40">
         <div class="chip-bg rounded-lg absolute w-14 h-12 top-4 left-4">
           <svg 
             viewBox="0 0 511 511" xml:space="preserve"
             fill="currentColor"
-            class="w-full h-full text-gray-400"
+            class="w-full h-full text-gray-400 opacity-50"
           >
             <path d="M455.5,56h-400C24.897,56,0,80.897,0,111.5v288C0,430.103,24.897,455,55.5,455h400c30.603,0,55.5-24.897,55.5-55.5v-288
               C511,80.897,486.103,56,455.5,56z M464,248H343v-56.5c0-4.687,3.813-8.5,8.5-8.5H464V248z M343,263h121v65H343V263z M479,223h17v65
