@@ -14,7 +14,8 @@
           <div class="w-full flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-xl">
             <div class="flex space-x-4 lg:space-x-10">
               <div class="flex w-full bg-white shadow-lg border-gray-100 rounded-xl">
-                <VisitorsApexChart />
+                <!-- <VisitorsApexChart /> -->
+                <UsersChart />
               </div>
               <!-- <div class="bg-gray-300 rounded-xl h-28 w-full"></div> -->
               <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
@@ -41,10 +42,11 @@
 <script>
 import VisitorsApexChart from "../components/VisitorsApexChart.vue";
 import CreditCard from "../components/CreditCard.vue";
+import UsersChart from "../components/UsersChart.vue";
 
 export default {
   name: 'Home',
-  components: { CreditCard, VisitorsApexChart },
+  components: { CreditCard, VisitorsApexChart, UsersChart },
   data: function(){
     return {
       showSidebar: false,

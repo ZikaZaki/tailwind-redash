@@ -116,9 +116,10 @@ export default {
         show: false,
         strokeDashArray: 4,
         padding: {
-          left: 2,
-          right: 2,
-          top: 0
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
         },
       },
       series: [
@@ -134,10 +135,10 @@ export default {
           show: false,
         },
         axisBorder: {
-          show: false,
+          show: true,
         },
         axisTicks: {
-          show: false,
+          show: true,
         },
       },
       yaxis: {
