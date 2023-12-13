@@ -75,12 +75,6 @@ export default {
       },
       deep: true,
     },
-    chartOptions: {
-      handler(newOptions) {
-        this.renderChart(this.chartType, this.chartData, newOptions);
-      },
-      deep: true,
-    },
   },
   mounted() {
     this.renderChart(this.chartType, this.chartData, this.chartOptions);
