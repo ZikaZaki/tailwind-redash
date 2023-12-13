@@ -55,6 +55,7 @@ const options = {
 };
 
 export default {
+  name: "VisitorsChart",
   components: {
     ChartCard,
   },
@@ -97,5 +98,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles for the UsersChart component if needed */
+/* Add any styles for the VisitorsChart component if needed */
 </style>
