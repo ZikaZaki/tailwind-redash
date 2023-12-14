@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full  bg-white shadow-lg border border-yellow-600 rounded-xl flex items-center px-5 py-7 space-x-5">
+  <div class="w-full h-24 bg-white shadow-lg border border-yellow-600 rounded-xl flex items-center px-5 py-7 space-x-5">
     <div class="bg-indigo-50 p-2 rounded-lg text-blue-800">
       <!-- put line-chart here instead of the SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8">

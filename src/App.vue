@@ -1,17 +1,19 @@
 <template>
-  <div class="flex h-full bg-blue-800">
+  <div class="flex w-full h-full bg-blue-800">
     <aside>
       <!-- Main - Side-Navbar -->
       <MainSideNav />
     </aside>
 
-    <main class="w-full p-4 lg:p-10 lg:rounded-l-[45px] bg-white">
+    <main class="w-full p-4 lg:p-10 lg:rounded-l-[45px] bg-white overflow-hidden">
       <!-- Header - TopNavigation -->
       <header>
         <TopNav />
       </header>
-
-      <router-view />
+      <!-- Router-View -->
+      <div id="view-wrapper" class="w-full">
+        <router-view />
+      </div>
     </main>
   </div>
 </template>
