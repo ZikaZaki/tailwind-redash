@@ -85,3 +85,27 @@ export default {
 <style scoped>
 /* Add any styles for the ChartCard if needed */
 </style>
+
+  <!-- props: {
+    chartData: {
+      type: Object,
+      required: true,
+    },
+    chartOptions: {
+      type: Object,
+      required: true,
+    },
+    chartId: {
+      type: String,
+      required: true,
+    },
+    chartTitle: {
+      type: String,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      chartType: "line",
+    };
+  }, -->
