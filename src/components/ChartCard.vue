@@ -1,16 +1,14 @@
 <template>
-  <div class="rounded-lg shadow-sm mb-4">
-    <div class="rounded-lg bg-white shadow-lg md:shadow-xl relative overflow-hidden">
-      <div class="px-3 pt-8 pb-10 text-center relative z-10">
-        <h4 class="text-sm uppercase text-gray-500 leading-tight">{{chartTitle}}</h4>
-        <h3 class="text-3xl text-gray-700 font-semibold leading-tight my-3">{{currentData}}</h3>
-        <p v-if="showPercentage" :class="{ 'text-green-500': isPositiveChange, 'text-red-500': isNegativeChange }" class="text-xs leading-tight">
-          {{ percentageChange }}
-        </p>
-      </div>
-      <div class="absolute bottom-0 inset-x-0">
-        <canvas ref="chart"></canvas>
-      </div>
+  <div class="flex w-full items-center justify-center">
+    <div class="flex flex-col py-3 space-y-0.5 items-center justify-center text-center relative z-10">
+      <h4 class="text-sm font-semibold uppercase text-gray-400 leading-tight">{{chartTitle}}</h4>
+      <h3 class="text-2xl text-gray-700 font-semibold leading-tight">{{currentData}}</h3>
+      <p v-if="showPercentage" :class="{'text-red-500': percentageChange < 0, 'text-green-500': percentageChange > 0 }" class="text-xs font-semibold leading-tight">
+        {{ percentageChange > 0 ? `▲ ${percentageChange} %` : `▼ ${percentageChange} %` }}
+      </p>
+    </div>
+    <div class="absolute inset-x-0 -bottom-2 -left-2 -right-1 overflow-hidden rounded-md">
+      <canvas ref="chart" height="70"></canvas>
     </div>
   </div>
 </template>
@@ -36,15 +34,20 @@ export default {
     percentageChange() {
       if (this.currentData && this.previousData) {
         const change = ((this.currentData - this.previousData) / this.previousData) * 100;
-        return  change > 0 ? `▲ ${change.toFixed(2)} %` : `▼ ${change.toFixed(2)} %`;
+        // return  change > 0 ? `▲ ${change.toFixed(2)} %` : `▼ ${change.toFixed(2)} %`;
+        if (change < 0) {
+          this.chartData.datasets[0].borderColor = "rgba(239, 68, 68, 1)";
+          this.chartData.datasets[0].backgroundColor = "rgba(239, 68, 68, 0.2)";
+        } else if (change > 0 && change < 5) {
+          this.chartData.datasets[0].borderColor = "rgba(255, 211, 92, 1)";
+          this.chartData.datasets[0].backgroundColor = "rgba(255, 211, 92, 0.2)";
+        } else {
+          this.chartData.datasets[0].borderColor = "rgba(52, 211, 153, 1)";
+          this.chartData.datasets[0].backgroundColor = "rgba(52, 211, 153, 0.2)";
+        }
+        return change.toFixed(2);
       }
       return null;
-    },
-    isPositiveChange() {
-      return ((this.currentData - this.previousData) / this.previousData) * 100 > 0;
-    },
-    isNegativeChange() {
-      return ((this.currentData - this.previousData) / this.previousData) * 100 < 0;
     },
     showPercentage() {
       return this.percentageChange !== null;

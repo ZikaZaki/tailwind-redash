@@ -1,11 +1,12 @@
 <template>
-  <div class="relative flex flex-col gap-1 w-full bg-white rounded-lg shadow dark:bg-gray-800 px-2 py-1 md:px-3 md:py-2 overflow-hidden">
+  <!-- class="relative flex flex-col gap-1 w-full bg-white rounded-lg shadow dark:bg-gray-800 px-2 py-1 md:px-3 md:py-2 overflow-hidden" -->
+  <div class="relative flex flex-col w-full mb-1.5 h-32 md:h-28 bg-white rounded-lg shadow-md p-2 md:shadow-lg">
     <ChartCard
       :chartType="chartType"
       :chartData="chartData"
       :chartOptions="chartOptions"
-      chartId="visitors-chart"
-      chartTitle="Visitors"
+      chartId="users-chart"
+      chartTitle="Users"
     />
   </div>
 </template>
@@ -15,7 +16,7 @@ import ChartCard from "./ChartCard.vue"; // Adjust path based on your location
 
 const type = "line";
 const options = {
-  maintainAspectRatio: true,
+  maintainAspectRatio: false,
   responsive: true,
   plugins: {
     // title: {
@@ -39,6 +40,12 @@ const options = {
       bottom: 0,
       left: 0,
     },
+    margin: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    }
   },
   scales: {
       y: {
@@ -68,8 +75,8 @@ export default {
           // label: 'My First Dataset',
           data: null, // Replace with actual data
           fill: 'origin',
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: "rgba(101, 116, 205, 0.2)",
+          borderColor: "rgba(101, 116, 205, 1)",
           tension: 0.3,
           pointStyle: 'circle',
           pointRadius: 0,
@@ -81,7 +88,7 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}/data.json`);
+        const response = await fetch(`${import.meta.env.BASE_URL}/users-data.json`);
         const data = await response.json();
         this.chartData.labels = data.labels;
         this.chartData.datasets[0].data = data.data;

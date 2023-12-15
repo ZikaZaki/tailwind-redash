@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex w-full h-28 bg-indigo-50 p-1 shrink-0 rounded-2xl border border-outline-variant overflow-hidden">
+  <div class="relative flex w-full bg-white shrink-0 rounded-2xl overflow-hidden">
     <swiper v-bind="swiperOptions">
       <swiper-slide v-for="(slide, index) in slides" :key="index">
         <component :is="slide.component" />
@@ -19,20 +19,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import LineChart from "./LineChart.vue";
+// import LineChart from "./LineChart.vue";
+import VisitorsChart from "./VisitorsChart.vue";
+import CustomersChart from "./CustomersChart.vue";
+import OrdersChart from "./OrdersChart.vue";
+// import UsersChart from "./UsersChart.vue";
 
 export default {
   name: "LineChartsContainer",
   components: {
     Swiper,
     SwiperSlide,
-    LineChart,
+    // LineChart,
+    VisitorsChart,
+    CustomersChart,
+    OrdersChart,
+    // UsersChart,
   },
   setup() {
     const slides = ref([
-      { component: "LineChart" },
-      { component: "LineChart" },
-      { component: "LineChart" },
+      { component: "VisitorsChart" },
+      { component: "CustomersChart" },
+      { component: "OrdersChart" },
+      // { component: "UsersChart" },
+      // { component: "LineChart" },
     ]);
 
     const swiperOptions = ref({
@@ -40,22 +50,19 @@ export default {
       breakpoints: {
         768: {
           slidesPerView: 2,
-          spaceBetween: 30,
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 30,
         },
         1280: {
           slidesPerView: 3,
-          spaceBetween: 30,
         },
         1536: {
           slidesPerView: 4,
-          spaceBetween: 30,
         },
       },
-      initialSlide: 1,
+      spaceBetween: 30,
+      initialSlide: 0,
       observer: true,
       resizeObserver: true,
       observeParents: true,
@@ -84,7 +91,7 @@ export default {
   align-self: center;
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 15px;
   transform: translateX(-50%);
  --swiper-pagination-color: #0070e4;
 }
