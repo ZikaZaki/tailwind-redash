@@ -1,5 +1,5 @@
 <template>
-  <div class="relative block w-full h-28 shrink-0 rounded-2xl border border-outline-variant overflow-hidden">
+  <div class="relative flex w-full h-28 bg-indigo-50 p-1 shrink-0 rounded-2xl border border-outline-variant overflow-hidden">
     <swiper v-bind="swiperOptions">
       <swiper-slide v-for="(slide, index) in slides" :key="index">
         <component :is="slide.component" />
@@ -33,11 +33,6 @@ export default {
       { component: "LineChart" },
       { component: "LineChart" },
       { component: "LineChart" },
-      { component: "LineChart" },
-      { component: "LineChart" },
-      { component: "LineChart" },
-      { component: "LineChart" },
-      { component: "LineChart" },
     ]);
 
     const swiperOptions = ref({
@@ -52,15 +47,15 @@ export default {
           spaceBetween: 30,
         },
         1280: {
-          slidesPerView: 4,
+          slidesPerView: 3,
           spaceBetween: 30,
         },
         1536: {
-          slidesPerView: 5,
+          slidesPerView: 4,
           spaceBetween: 30,
         },
       },
-      initialSlide: 2,
+      initialSlide: 1,
       observer: true,
       resizeObserver: true,
       observeParents: true,
