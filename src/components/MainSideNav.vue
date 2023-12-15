@@ -1,8 +1,8 @@
 <template>
   <!-- fixed lg:static bottom-0 w-full lg:w-24 lg:h-full z-10 -->
   <div class="fixed lg:static bottom-0 w-full lg:w-20 lg:h-full z-10" role="navigation">
-    <!-- relative w-full lg:w-24 h-full bg-blue-800 -->
-    <div class="relative w-full lg:w-20 h-full rounded-t-full lg:rounded-none bg-blue-800">
+    <!-- rounded-t-full -->
+    <div class="relative w-full lg:w-20 h-full rounded-full lg:rounded-none bg-blue-800">
       <router-link to="/" class="group hidden absolute top-10 left-1/2 transform -translate-x-1/2 lg:flex lg:justify-center lg:items-center w-14 h-14 rounded-xl hover:bg-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"

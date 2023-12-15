@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full h-full bg-blue-800">
+  <div class="flex w-full h-full rounded-b-full lg:rounded-none bg-blue-800">
     <aside>
       <!-- Main - Side-Navbar -->
       <MainSideNav />
