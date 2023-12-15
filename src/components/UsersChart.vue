@@ -1,6 +1,5 @@
 <template>
-  <!-- class="relative flex flex-col gap-1 w-full bg-white rounded-lg shadow dark:bg-gray-800 px-2 py-1 md:px-3 md:py-2 overflow-hidden" -->
-  <div class="relative flex flex-col w-full mb-1.5 h-32 md:h-28 bg-white rounded-lg shadow-md p-2 md:shadow-lg">
+  <div class="relative overflow-hidden flex flex-col w-full mb-1.5 h-32 md:h-28 bg-white rounded-lg shadow-md p-2 md:shadow-lg border-[1px] border-gray-200">
     <ChartCard
       :chartType="chartType"
       :chartData="chartData"
@@ -33,31 +32,18 @@ const options = {
       backgroundColor: 'rgba(0, 0, 0, 0.8)',
     },
   },
-  layout: {
-    padding: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    },
-    margin: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    }
-  },
   scales: {
-      y: {
-        border: {display: false},
-        grid: { display: false },
-        ticks: { display: false },
-      },
-      x: {
-        border: {display: false},
-        grid: { display: false },
-        ticks: { display: false },
-      },
+    y: {
+      display: false,
+      ticks: { padding: 0 },
+    },
+    x: {
+      display: false,
+      ticks: { padding: 0 },
+    },
+  },
+  layout: {
+    padding: 0,
   },
 };
 

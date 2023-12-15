@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex w-full bg-white shrink-0 rounded-2xl overflow-hidden">
+  <div class="relative flex w-full bg-white shrink-0 rounded-lg overflow-hidden">
     <swiper v-bind="swiperOptions">
       <swiper-slide v-for="(slide, index) in slides" :key="index">
         <component :is="slide.component" />
@@ -19,7 +19,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// import LineChart from "./LineChart.vue";
 import VisitorsChart from "./VisitorsChart.vue";
 import CustomersChart from "./CustomersChart.vue";
 import OrdersChart from "./OrdersChart.vue";
@@ -30,7 +29,6 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    // LineChart,
     VisitorsChart,
     CustomersChart,
     OrdersChart,
@@ -42,7 +40,6 @@ export default {
       { component: "CustomersChart" },
       { component: "OrdersChart" },
       // { component: "UsersChart" },
-      // { component: "LineChart" },
     ]);
 
     const swiperOptions = ref({
@@ -61,7 +58,7 @@ export default {
           slidesPerView: 4,
         },
       },
-      spaceBetween: 30,
+      spaceBetween: 50,
       initialSlide: 0,
       observer: true,
       resizeObserver: true,

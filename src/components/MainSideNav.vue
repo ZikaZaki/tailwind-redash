@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Active NavLink Styling  */
 .active-link {
   @apply bg-white group-hover:text-red-500 text-red-500 opacity-100 transform -translate-y-8 lg:-translate-y-0 lg:translate-x-8 duration-500 shadow-xl;
