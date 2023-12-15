@@ -61,7 +61,7 @@ export default {
         datasets: [{
           // label: 'My First Dataset',
           data: null, // Replace with actual data
-          fill: 'origin',
+          fill: true,
           backgroundColor: "rgba(101, 116, 205, 0.2)",
           borderColor: "rgba(101, 116, 205, 1)",
           tension: 0.3,
