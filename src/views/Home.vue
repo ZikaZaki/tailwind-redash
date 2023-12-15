@@ -35,13 +35,11 @@
 
 <script>
 import CreditCard from "../components/CreditCard.vue";
-import LineChart from "../components/LineChart.vue";
-import VisitorsChart from "../components/VisitorsChart.vue";
 import LineChartsContainer from "../components/LineChartsContainer.vue";
 
 export default {
   name: 'Home',
-  components: { CreditCard, VisitorsChart, LineChart, LineChartsContainer },
+  components: { CreditCard, LineChartsContainer },
   data: function(){
     return {
       showSidebar: false,
