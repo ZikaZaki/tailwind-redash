@@ -16,7 +16,9 @@
             <LineChartsContainer />
 
   
-            <div class="bg-gray-300 rounded-xl h-28 mt-4 lg:mt-8 w-full"></div>
+            <div class="flex bg-gray-300 lg:bg-indigo-50 rounded-xl mt-4 lg:mt-8 w-full">
+              <CandlestickChart />
+            </div>
   
             <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-8">
               <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
@@ -35,11 +37,12 @@
 
 <script>
 import CreditCard from "../components/CreditCard.vue";
+import CandlestickChart from "../components/CandlestickChart.vue";
 import LineChartsContainer from "../components/LineChartsContainer.vue";
 
 export default {
   name: 'Home',
-  components: { CreditCard, LineChartsContainer },
+  components: { CreditCard, LineChartsContainer, CandlestickChart },
   data: function(){
     return {
       showSidebar: false,

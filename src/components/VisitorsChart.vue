@@ -62,9 +62,12 @@ export default {
           // label: 'My First Dataset',
           data: null, // Replace with actual data
           fill: true,
+          borderCapStyle: 'round',
           backgroundColor: "rgba(101, 116, 205, 0.2)",
           borderColor: "rgba(101, 116, 205, 1)",
-          tension: 0.3,
+          cubicInterpolationMode: 'monotone',
+          tension: 0.4,
+          spanGaps: true,
           pointStyle: 'circle',
           pointRadius: 0,
         }]
