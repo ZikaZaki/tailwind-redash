@@ -25,10 +25,10 @@
               <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
             </div>
           </div>
-          <div class="flex flex-col justify-center p-8 items-center w-full flex-shrink-0 lg:w-[28%] lg:flex-shrink bg-gray-500 rounded-xl">
+          <div class="flex flex-col items-center p-8 w-full flex-shrink-0 lg:w-[28%] lg:flex-shrink bg-gray-500 rounded-xl">
             <!-- sidebar -->
             <CreditCard />
-            <div class="bg-gray-500 w-full h-full"></div>
+            <!-- <div class="bg-gray-500 w-full h-full"></div> -->
           </div>
         </div>
       </div>

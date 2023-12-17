@@ -1,8 +1,8 @@
 <template>
-  <div class="group flex w-full h-full max-w-[400px] max-h-[280px] [perspective:1000px] rounded-2xl">
+  <div class="group flex w-full aspect-video max-w-[400px] max-h-[280px] [perspective:1000px] rounded-2xl">
     <div class="relative h-full w-full rounded-2xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       <div class="front absolute inset-0 h-full w-full card-bg text-white font-[inconsolata] text-shadow rounded-2xl shadow-md shadow-black/40">
-        <div class="chip-bg rounded-lg absolute w-14 h-12 top-4 left-4">
+        <div class="chip-bg rounded-lg absolute w-6 h-5 xl:w-12 xl:h-10 top-4 left-4">
           <svg 
             viewBox="0 0 511 511" xml:space="preserve"
             fill="currentColor"
@@ -20,7 +20,7 @@
               c12.958,0,23.5-10.542,23.5-23.5V383h17v16.5C496,421.832,477.832,440,455.5,440z"/>
             </svg>
         </div>
-        <div class="logo absolute top-2 right-4 w-12 text-white">
+        <div class="logo absolute top-2 right-4 w-8 xl:w-12 text-white">
           <svg
             version="1.1"
             id="visa"
@@ -46,12 +46,12 @@
             </g>
           </svg>
         </div>
-        <div class="number absolute top-24 left-12 my-0 mx-auto text-white">0984234 0923489 09823490</div>
-        <div class="card-holder absolute top-40 left-4 my-0 mx-auto uppercase">
+        <div class="number absolute top-20 left-12 my-0 mx-auto text-white">098423 092348 098234</div>
+        <div class="card-holder absolute top-32 left-4 my-0 mx-auto uppercase">
           <label>Card holder</label>
           <div></div>
         </div>
-        <div class="card-expiration-date absolute my-0 mx-auto top-40 text-right left-auto right-4 uppercase">
+        <div class="card-expiration-date absolute my-0 mx-auto top-32 text-right left-auto right-4 uppercase">
           <label>Expires</label>
           <div></div>
         </div>
