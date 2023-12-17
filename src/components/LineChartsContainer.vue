@@ -92,4 +92,9 @@ export default {
   transform: translateX(-50%);
  --swiper-pagination-color: #0070e4;
 }
+
+/* Added to fix content when zooming  */
+.swiper-wrapper div {
+  min-width: max-content;
+}
 </style>

@@ -10,24 +10,25 @@
 
     <div class="overflow-hidden">
       <div class="transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
-        <div class="flex mt-4 lg:mt-8 lg:space-x-10">
-          <div class="w-full flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-xl">
+        <div class="flex mt-4 lg:mt-7 lg:space-x-10">
+          <div class="w-full flex-shrink-0 lg:w-[72%] lg:flex-shrink rounded-xl">
             <!-- Line-Charts Container -->
             <LineChartsContainer />
 
   
-            <div class="flex bg-gray-300 lg:bg-indigo-50 rounded-xl mt-4 lg:mt-8 w-full">
+            <div class="flex bg-gray-300 lg:bg-indigo-50 rounded-xl mt-4 lg:mt-7 w-full">
               <CandlestickChart />
             </div>
   
-            <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-8">
+            <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-7">
               <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
               <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
             </div>
           </div>
-          <div class="flex justify-center items-center w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink bg-gray-300 rounded-xl h-52">
+          <div class="flex flex-col justify-center p-8 items-center w-full flex-shrink-0 lg:w-[28%] lg:flex-shrink bg-gray-500 rounded-xl">
             <!-- sidebar -->
             <CreditCard />
+            <div class="bg-gray-500 w-full h-full"></div>
           </div>
         </div>
       </div>

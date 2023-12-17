@@ -1,5 +1,15 @@
 <template>
-  <div class="flex w-full h-72">
+  <div class="flex w-full h-72 relative">
+    <div class="absolute top-6 right-10 rounded-full bg-white pr-1">
+      <select id="datasetSelector" class="rounded-full py-1 px-2 w-24 bg-white border-none outline-none text-blue-800 font-semibold">
+        <option value="0">Year</option>
+        <option value="20">2020</option>
+        <option value="21">2021</option>
+        <option value="22">2022</option>
+        <option value="23">2023</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
       <canvas ref="chart" height="auto" class="flex flex-col  min-w-full" ></canvas>
   </div>
 </template>
@@ -7,14 +17,30 @@
 <script>
 import Chart from "chart.js/auto";
 
-const customPlugin = {
-  id: 'custom_canvas_background_color',
-  beforeUpdate: (chart, options) => {
-    console.log("HI from custom plugin....................");
+const candlestickPlugin = {
+  id: "custom_candlestick_plugin",
+  beforeDatasetsDraw: (chart, args, pluginOptions) => {
+    console.log("HI from CandleStick custom plugin....................");
+    const { ctx, data, chartArea: { top, bottom, left, right, width, height }, scales: { x, y } } = chart;
 
-    const { ctx } = chart;
-    ctx.fillStyle = chart.data.datasets[0].backgroundColor;
-    ctx.fillRect(0, 0, chart.width, chart.height);
+    ctx.save();
+    ctx.lineWidth = 1.5;
+    // set color to be dark gray
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.3)";
+
+    // console.log(chart.getDatasetMeta(0).data[0]);
+
+    data.datasets[0].data.forEach((datapoint, index) => {
+      ctx.beginPath();
+      ctx.moveTo(chart.getDatasetMeta(0).data[index].x, chart.getDatasetMeta(0).data[index].y);
+      ctx.lineTo(chart.getDatasetMeta(0).data[index].x, y.getPixelForValue(data.datasets[0].data[index].l));
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(chart.getDatasetMeta(0).data[index].x, chart.getDatasetMeta(0).data[index].y);
+      ctx.lineTo(chart.getDatasetMeta(0).data[index].x, y.getPixelForValue(data.datasets[0].data[index].h));
+      ctx.stroke();
+    });
   },
 };
 
@@ -22,123 +48,119 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
         datasets: [{
-          label: "Statistics",
-          showLine: true,
           maxBarThickness: 6,
           backgroundColor: (ctx) => {
             const { raw: {o, h, l, c} } = ctx;
             // console.log("o: {o}, h: {h}, l: {l}, c: {c}", o, h, l, c)
-            if (c > 0) {
-              return "rgb(52, 211, 153)";
-            } else  {
+            if (c >= o) {
+              // return "rgb(52, 211, 153)";
+              return "rgb(30 64 175)";
+            } else {
               return "rgb(239, 68, 68)";
             }
           },
           borderWidth: 0,
           borderRadius: Number.MAX_VALUE,
           borderSkipped: false,
-          layout: {
-            padding: 0,
-          },
+
           data: [
             {
-              x: "Jan",
-              o: 10,
-              h: 0,
-              l: 30,
-              c: 20,
-              s: [10, 60]
-            },
-            {
-              x: "Feb",
-              o: -20,
-              h: 10,
-              l: -40,
-              c: -30,
-              s: [-10, -50]
-            },
-            {
-              x: "March",
-              o: -30,
-              h: 20,
-              l: 10,
-              c: 20,
-              s: [30, -20]
-            },
-            {
-              x: "April",
-              o: 30,
-              h: 50,
-              l: 10,
-              c: 40,
-              s: [30, 10]
-            },
-            {
-              x: "May",
-              o: 50,
-              h: 40,
-              l: 30,
-              c: 40,
-              s: [60, 15]
-            },
-            {
-              x: "June",
-              o: 10,
-              h: 30,
+              month: "Jan",
+              o: 54.23,
+              h: 68.97,
               l: 0,
-              c: 20,
-              s: [45, 10]
+              c: 41.06,
+              scale: [54.32, 41.06],
             },
             {
-              x: "July",
-              o: 70,
-              h: 60,
-              l: 50,
-              c: 60,
-              s: [75, 40]
+              month: "Feb",
+              o: 41.06,
+              h: 54.32,
+              l: 0,
+              c: 31.79,
+              scale: [41.06, 31.79],
             },
             {
-              x: "Aug",
-              o: 80,
-              h: 70,
-              l: 60,
-              c: 70,
-              s: [80, -10]
+              month: "March",
+              o: 31.79,
+              h: 60.32,
+              l: 3.79,
+              c: 31.96,
+              scale: [31.79, 31.96],
             },
             {
-              x: "Sept",
-              o: -90,
-              h: 80,
-              l: -70,
-              c: -80,
-              s: [-85, -10]
+              month: "April",
+              o: 31.96,
+              h: 81.32,
+              l: 10.79,
+              c: 41.35,
+              scale: [31.96, 41.35],
             },
             {
-              x: "Oct",
-              o: 100,
-              h: 90,
-              l: 80,
-              c: 90,
-              s: [100, 40]
+              month: "May",
+              o: 41.35,
+              h: 88.08,
+              l: 15.79,
+              c: 48.40,
+              scale: [41.35, 48.40],
             },
             {
-              x: "Nov",
-              o: 110,
+              month: "June",
+              o: 48.40,
               h: 100,
-              l: 90,
-              c: 100,
-              s: [110, 60]
+              l: 92.88,
+              c: 80.42,
+              scale: [48.40, 80.42],
             },
             {
-              x: "Dec",
-              o: 120,
-              h: 110,
-              l: 100,
-              c: 110,
-              s: [120, 90]
+              month: "July",
+              o: 80.42,
+              h: 100,
+              l: 96.79,
+              c: 92.40,
+              scale: [80.42, 92.40],
             },
+            {
+              month: "Aug",
+              o: 92.40,
+              h: 78.28,
+              l: 17.79,
+              c: 62.82,
+              scale: [92.40, 62.82],
+            },
+            {
+              month: "Sept",
+              o: 62.82,
+              h: 32.32,
+              l: 5.89,
+              c: 33.67,
+              scale: [62.82, 33.67],
+            },
+            {
+              month: "Oct",
+              o: 33.67,
+              h: 37.05,
+              l: 11.09,
+              c: 27.27,
+              scale: [33.67, 27.27],
+            },
+            {
+              month: "Nov",
+              o: 27.27,
+              h: 57.32,
+              l: 15.79,
+              c: 33.46,
+              scale: [27.27, 33.46],
+            },
+            {
+              month: "Dec",
+              o: 33.46,
+              h: 78.13,
+              l: 32.32,
+              c: 47.97,
+              scale: [33.46, 47.79],
+            }
           ]
         }],
       },
@@ -148,7 +170,7 @@ export default {
     const ctx = this.$refs.chart.getContext('2d');
 
     // Register custom plugin
-    Chart.register(customPlugin);
+    Chart.register(candlestickPlugin);
 
     this.chart = new Chart(ctx, {
       type: 'bar',
@@ -156,20 +178,43 @@ export default {
       options: {
         maintainAspectRatio: false,
         responsive: true,
+        layout: { padding: 20, },
         parsing: {
-          xAxisKey: 'x',
-          yAxisKey: 's'
+          xAxisKey: 'month',
+          yAxisKey: 'scale'
         },
-        // plugins: {
-        //   legend: {
-        //     position: 'top',
-        //   },
-        //   title: {
-        //     display: true,
-        //     text: 'Chart.js Bar Chart',
-        //   },
-        // },
-        plugins: [customPlugin],
+        scales: {
+          x: {
+            display: true,
+            grid: {
+              display: false,
+            },
+          },
+          y: {
+            grid: {
+              display: false,
+            },
+          },
+        },
+        plugins: {
+          legend: { display: false},
+          title: {
+            display: true,
+            fullSize: false,
+            align: "start",
+            text: 'Statistics',
+            color: "#000000",
+            font: {
+              size: 16,
+              weight: "bold",
+            },
+            padding: {
+              bottom: 30,
+            },
+          },
+          // Add custom plugins here
+          candlestick: candlestickPlugin,
+        },
       },
     });
   },

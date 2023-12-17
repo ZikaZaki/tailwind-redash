@@ -1,6 +1,6 @@
 <template>
   <div class="flex lg:space-x-12 items-center" role="navigation">
-    <div class="hidden lg:w-1/2 lg:block">
+    <div class="hidden lg:w-[47%] lg:block">
       <Search />
     </div>
     <div class="w-full lg:w-1/2">

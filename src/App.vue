@@ -5,7 +5,7 @@
       <MainSideNav />
     </aside>
 
-    <main class="w-full p-4 lg:p-10 lg:rounded-l-[45px] bg-white overflow-hidden">
+    <main class="w-full p-4 lg:px-12 lg:py-8 lg:rounded-l-[45px] bg-white overflow-hidden">
       <!-- Header - TopNavigation -->
       <header>
         <TopNav />

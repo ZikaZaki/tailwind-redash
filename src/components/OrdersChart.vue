@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full mb-1.5 h-36 bg-white rounded-lg shadow-md p-3 md:shadow-lg border-[1px] border-gray-200">
+  <div class="relative overflow-hidden flex flex-col w-full mb-1.5 h-36 lg:h-28 bg-white rounded-lg shadow-md p-3 md:shadow-lg border-[1px] border-gray-200">
     <ChartCard
       :chartType="chartType"
       :chartData="chartData"
