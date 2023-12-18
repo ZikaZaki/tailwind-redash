@@ -19,8 +19,8 @@ export const candlestickPlugin = {
       // Change the color of the line based on the open/close values
       ctx.strokeStyle =
         datapoint.c > datapoint.o
-          ? "rgba(30, 58, 138, 0.5)"
-          : "rgba(239, 68, 68, 0.5)";
+          ? "rgba(165, 180, 252, 1)"
+          : "rgba(254, 202, 202, 1)";
 
       ctx.beginPath();
       ctx.moveTo(x, yPoint);

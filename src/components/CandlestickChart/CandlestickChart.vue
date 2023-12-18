@@ -26,7 +26,7 @@ export default {
       chartData: {
         datasets: [
           {
-            barThickness: 15,
+            barThickness: 10,
             borderWidth: 0,
             borderRadius: Number.MAX_VALUE,
             borderSkipped: false,
@@ -116,7 +116,7 @@ export default {
     }, 300),
     updateChartBackgroundColor(){
       this.chartData.datasets[0].backgroundColor = this.chartData.datasets[0].data.map((item) => { 
-        return item.c >= item.o ? "rgba(30, 58, 138, 1)" : "rgba(239, 68, 68, 1)"; 
+        return item.c >= item.o ? "rgba(30, 64, 175, 1)" : "rgba(239, 68, 68, 1)"; 
       });
     },
   },
