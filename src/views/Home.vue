@@ -10,19 +10,22 @@
 
     <div class="overflow-hidden">
       <div class="transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
-        <div class="flex mt-4 lg:mt-7 lg:space-x-10">
+        <div class="flex mt-4 lg:mt-10 lg:space-x-10">
           <div class="w-full flex-shrink-0 lg:w-[72%] lg:flex-shrink rounded-xl">
+            <div class="flex space-x-4 lg:space-x-10"></div>
             <!-- Line-Charts Container -->
             <LineChartsContainer />
 
-  
-            <div class="flex bg-gray-300 lg:bg-indigo-50 rounded-xl mt-4 lg:mt-7 w-full">
+              
+            <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-8 md:flex-row bg-gray-300 rounded-xl mt-4 lg:mt-10 w-full">
               <CandlestickChart />
+              <!-- <div class="bg-yellow-300 rounded-xl h-72 w-full md:w-[45%]"></div> -->
+
             </div>
   
-            <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-7">
-              <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
-              <div class="bg-gray-300 rounded-xl h-28 w-full"></div>
+            <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-10">
+              <div class="bg-yellow-300 rounded-xl h-52 w-full"></div>
+              <div class="bg-yellow-300 rounded-xl aspect-video w-full"></div>
             </div>
           </div>
           <div class="flex flex-col items-center p-8 w-full flex-shrink-0 lg:w-[28%] lg:flex-shrink bg-gray-500 rounded-xl">
@@ -38,8 +41,8 @@
 
 <script>
 import CreditCard from "../components/CreditCard.vue";
-import CandlestickChart from "../components/CandlestickChart.vue";
-import LineChartsContainer from "../components/LineChartsContainer.vue";
+import CandlestickChart from "../components/CandlestickChart/CandlestickChart.vue";
+import LineChartsContainer from "../components/LineCharts/LineChartsContainer.vue";
 
 export default {
   name: 'Home',

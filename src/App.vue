@@ -1,11 +1,11 @@
 <template>
-  <div class="flex w-full h-full rounded-b-full lg:rounded-none bg-blue-800">
+  <div class="flex w-full h-screen rounded-b-full lg:rounded-none bg-blue-800">
     <aside>
       <!-- Main - Side-Navbar -->
       <MainSideNav />
     </aside>
 
-    <main class="w-full p-4 lg:px-12 lg:py-8 lg:rounded-l-[45px] bg-white overflow-hidden">
+    <main class="w-full p-4 lg:px-12 lg:py-10 lg:rounded-l-[45px] bg-white overflow-hidden">
       <!-- Header - TopNavigation -->
       <header>
         <TopNav />
