@@ -29,7 +29,8 @@
                 <Blog />
     
     
-              <div class="flex space-x-4 lg:space-x-10 mt-4 lg:mt-10">
+              <div class="flex-col space-y-8 space-x-4 lg:space-x-10 mt-4 lg:mt-10">
+                <div class="bg-yellow-300 rounded-xl h-52 w-full"></div>
                 <div class="bg-yellow-300 rounded-xl h-52 w-full"></div>
                 <div class="bg-yellow-300 rounded-xl aspect-video w-full"></div>
               </div>
