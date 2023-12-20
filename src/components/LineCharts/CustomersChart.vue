@@ -75,7 +75,7 @@ export default {
     async fetchData() {
       try {
         console.log("BASE_URL.........: ", `${import.meta.env.BASE_URL}public/customers-data.json`)
-        const response = await fetch(`${import.meta.env.BASE_URL}public/customers-data.json`);
+        const response = await fetch("customers-data.json");
         const data = await response.json();
         this.chartData.labels = data.labels;
         this.chartData.datasets[0].data = data.data;
