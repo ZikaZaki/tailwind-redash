@@ -96,7 +96,7 @@ export default {
   methods: {
     fetchData: debounce(async function() {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}/statistics-data.json`);
+        const response = await fetch(`/public/statistics-data.json`);
         const data = await response.json();
         this.chartData.datasets[0].data = data.stats;
         this.updateChartBackgroundColor(this.chartData);
