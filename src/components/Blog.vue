@@ -19,7 +19,7 @@
           How to properly manage your personal budget?
         </a>
       </h3>
-      <div class="flex items-center space-x-8">
+      <div class="flex items-center space-x-4 md:space-x-8">
         <div class="flex items-center space-x-2">
           <div class="w-6 text-blue-800">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"       fill="currentColor" data-slot="icon" class="w-5 h-5">
@@ -77,7 +77,7 @@
           How to properly manage your personal budget?
         </a>
       </h3>
-      <div class="flex items-center space-x-8">
+      <div class="flex items-center space-x-4 md:space-x-8">
         <div class="flex items-center space-x-2">
           <div class="w-6 text-blue-800">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"       fill="currentColor" data-slot="icon" class="w-5 h-5">
