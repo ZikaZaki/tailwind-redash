@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="absolute flex inset-x-[-2px] bottom-[-2px]">
-      <canvas ref="chart" height="70"></canvas>
+      <canvas ref="lineChart" height="70"></canvas>
     </div>
   </div>
 </template>
@@ -55,15 +55,15 @@ export default {
   },
   methods: {
     renderChart() {
-      if (!this.chart) {
-        this.chart = new Chart(this.$refs.chart.getContext("2d"), {
+      if (!this.lineChart) {
+        this.lineChart = new Chart(this.$refs.lineChart.getContext("2d"), {
           type: this.chartType,
           data: this.chartData,
           options: this.chartOptions,
         });
       } 
       else {
-        this.chart.update({
+        this.lineChart.update({
           data: this.chartData,
           options: this.chartOptions,
         });

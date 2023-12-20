@@ -1,9 +1,9 @@
 <template>
   <div class="flex lg:space-x-12 items-center" role="navigation">
-    <div class="hidden lg:w-1/2 lg:block">
+    <div class="hidden lg:w-[48%] lg:block">
       <Search />
     </div>
-    <div class="w-full lg:w-1/2">
+    <div class="w-full lg:w-[51%]">
       <div class="flex justify-between items-center">
         <div class="lg:hidden">
           <router-link to="/" class="flex justify-center items-center w-12 h-12 rounded-xl bg-gray-50">

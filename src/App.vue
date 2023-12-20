@@ -5,13 +5,13 @@
       <MainSideNav />
     </aside>
 
-    <main class="w-full p-4 lg:p-10 lg:rounded-l-[45px] bg-white overflow-hidden">
+    <main class="w-full h-full p-4 lg:px-12 lg:py-10 lg:rounded-l-[45px] bg-white overflow-hidden">
       <!-- Header - TopNavigation -->
       <header>
         <TopNav />
       </header>
       <!-- Router-View -->
-      <div id="view-wrapper" class="w-full">
+      <div id="view-wrapper" class="w-full h-full">
         <router-view />
       </div>
     </main>

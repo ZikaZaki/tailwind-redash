@@ -1,11 +1,11 @@
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full mb-1.5 h-32 md:h-28 bg-white rounded-lg shadow-md p-2 md:shadow-lg border-[1px] border-gray-200">
+  <div class="relative overflow-hidden flex flex-col w-full h-40 bg-white rounded-lg shadow-md p-3 md:shadow-lg border-[1px] border-gray-200">
     <ChartCard
       :chartType="chartType"
       :chartData="chartData"
       :chartOptions="chartOptions"
-      chartId="users-chart"
-      chartTitle="Users"
+      chartId="customers-chart"
+      chartTitle="Customers"
     />
   </div>
 </template>
@@ -18,10 +18,6 @@ const options = {
   maintainAspectRatio: false,
   responsive: true,
   plugins: {
-    // title: {
-    //   display: true,
-    //   text: "ZikaZki"
-    // },
     legend: {
       display: false, // Hide the legend (dataset toggle button)
     },
@@ -48,6 +44,7 @@ const options = {
 };
 
 export default {
+  name: "CustomersChart",
   components: {
     ChartCard,
   },
@@ -61,9 +58,12 @@ export default {
           // label: 'My First Dataset',
           data: null, // Replace with actual data
           fill: true,
+          borderCapStyle: 'round',
           backgroundColor: "rgba(101, 116, 205, 0.2)",
           borderColor: "rgba(101, 116, 205, 1)",
-          tension: 0.3,
+          cubicInterpolationMode: 'monotone',
+          tension: 0.4,
+          spanGaps: true,
           pointStyle: 'circle',
           pointRadius: 0,
         }]
@@ -74,7 +74,7 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}/users-data.json`);
+        const response = await fetch(`${import.meta.env.BASE_URL}/customers-data.json`);
         const data = await response.json();
         this.chartData.labels = data.labels;
         this.chartData.datasets[0].data = data.data;
@@ -90,5 +90,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles for the UsersChart component if needed */
+/* Add any styles for the CustomersChart component if needed */
 </style>
