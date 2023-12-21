@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full h-full">
+  <div class="relative overflow-hidden flex w-full lg:w-1/2 h-72 shadow-lg lg:shadow-xl bg-white border-2 border-indigo-100 rounded-xl">
     <time-chart
       :chart-data="chartData"
       :options="chartOptions"
@@ -23,7 +23,7 @@ export default {
             label: "Spent Time",
             data: [
               2.8, 2.2, 3.3, 2.75,
-              4.3, 4.1, 5.2
+              4.3, 4.6
             ], // Replace with your actual data
             fill: false,
             borderCapStyle: 'round',
@@ -60,19 +60,12 @@ export default {
         ],
       },
       chartOptions: {
-        layout: {
-          padding: {
-            top: 20,
-            bottom: 20,
-            left: 30,
-            right: 30,
-          }
-        },
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: 0 },
         scales: {
           x: {
-            display: true,
+            display: false,
             grid: { display: false },
             ticks: {
               color: "rgba(0, 0, 0, 0.5)",
@@ -80,16 +73,14 @@ export default {
                 size: 12,
                 weight: 600,
               },
-              // align: "end",
             },
           },
           y: {
             beginAtZero: true,
-            display: true,
+            display: false,
           },
         },
         plugins: {
-
           legend: {
             display: false,
           },
