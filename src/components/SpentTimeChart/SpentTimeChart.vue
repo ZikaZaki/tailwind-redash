@@ -42,13 +42,13 @@ const options = {
       display: true,
       fullSize: true,
       align: "start",
-      text: "     " + title,
+      text: "        " + title,
       color: "#000000",
       font: {
         size: 16,
         weight: "bold",
       },
-      padding: 10,
+      padding: 20,
     },
     tooltip: {
       position: "nearest",
