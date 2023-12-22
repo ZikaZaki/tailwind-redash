@@ -8,10 +8,11 @@
       </button>
     </div>
 
-    <div class="h-full pb-52 lg:pb-24">
+    <!-- overflow-hidden here is necessary to hide the sidebar -->
+    <div class="overflow-hidden h-full pb-52 lg:pb-24">
       <div class="h-full transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
         <div class="flex h-full mt-4 lg:mt-10 lg:space-x-10">
-          <div class="w-full h-full overflow-hidden flex-shrink-0 lg:w-[72%] lg:flex-shrink rounded-xl">
+          <div class="w-full h-full overflow-hidden flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-xl">
             <Simplebar class="flex w-full h-full overflow-auto">
 
               <div class="flex space-x-4 lg:space-x-10"></div>
@@ -41,7 +42,7 @@
             </Simplebar>
           </div>
 
-          <div class="flex flex-col items-center p-8 w-full flex-shrink-0 lg:w-[28%] lg:flex-shrink bg-gray-500 rounded-xl">
+          <div class="flex flex-col items-center p-8 w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink bg-gray-500 rounded-xl">
             <!-- sidebar -->
             <CreditCard />
             <!-- <div class="bg-gray-500 w-full h-full"></div> -->

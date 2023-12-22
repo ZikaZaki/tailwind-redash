@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex w-full bg-white shrink-0 rounded-lg overflow-hidden">
     <swiper v-bind="swiperOptions">
-      <swiper-slide v-for="(slide, index) in slides" :key="index" class="px-1 min-w-max mb-2">
+      <swiper-slide v-for="(slide, index) in slides" :key="index" class="min-w-max mb-2">
         <component :is="slide.component" />
       </swiper-slide>
     </swiper>
