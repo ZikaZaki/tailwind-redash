@@ -15,18 +15,20 @@
             <Simplebar class="flex w-full h-full overflow-auto">
 
               <div class="flex space-x-4 lg:space-x-10"></div>
+              
               <!-- Line-Charts Container -->
               <LineChartsContainer />
     
-                
-              <div class="flex bg-gray-300 rounded-xl mt-4 lg:mt-10 w-full">
+              <!-- Candlestick-Chart Container -->
+              <div class="flex bg-indigo-50 border border-indigo-100 rounded-xl mt-4 lg:mt-10 w-full">
                 <CandlestickChart />
-                <!-- <div class="bg-yellow-300 rounded-xl h-72 w-full md:w-[45%]"></div> -->
-    
               </div>
               
-    
+              <!-- Blog & Spent-Time Chart Container -->
+              <div class="md:flex space-y-5 md:space-y-0 md:space-x-10 mt-4 lg:mt-10">
+                <SpentTimeChart />
                 <Blog />
+              </div>
     
     
               <div class="flex-col space-y-8 space-x-4 lg:space-x-0 mt-4 lg:mt-10">

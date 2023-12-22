@@ -7,7 +7,7 @@
         {{ percentageChange > 0 ? `▲ ${percentageChange} %` : `▼ ${percentageChange} %` }}
       </p>
     </div>
-    <div class="absolute flex inset-x-[-2px] bottom-[-2px]">
+    <div class="absolute flex inset-x-[-3px] bottom-[-2px]">
       <canvas ref="lineChart" height="70"></canvas>
     </div>
   </div>

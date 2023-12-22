@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden flex w-full lg:w-1/2 h-72 bg-white shadow-lg border-2 border-indigo-100 rounded-xl">
+  <div class="relative overflow-hidden flex w-full lg:w-1/2 h-72 bg-white shadow-lg border border-indigo-100 rounded-xl">
     <time-chart
       :chartType="chartType"
       :chartData="chartData"

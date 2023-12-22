@@ -12,17 +12,16 @@
 
 <script>
 import { ref } from "vue";
+// import Swiper and modules styles
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from 'swiper/modules';
-// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+// Import LineCharts components
 import VisitorsChart from "./VisitorsChart.vue";
 import CustomersChart from "./CustomersChart.vue";
 import OrdersChart from "./OrdersChart.vue";
-// import UsersChart from "./UsersChart.vue";
 
 export default {
   name: "LineChartsContainer",
@@ -32,14 +31,12 @@ export default {
     VisitorsChart,
     CustomersChart,
     OrdersChart,
-    // UsersChart,
   },
   setup() {
     const slides = ref([
       { component: "VisitorsChart" },
       { component: "CustomersChart" },
       { component: "OrdersChart" },
-      // { component: "UsersChart" },
     ]);
 
     const swiperOptions = ref({

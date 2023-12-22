@@ -1,5 +1,6 @@
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full h-40 bg-white rounded-lg shadow-md p-3 md:shadow-lg border-[1px] border-gray-200">
+  <div class="relative flex flex-col w-full h-40 p-3 bg-white rounded-lg 
+  shadow-lg border border-gray-200 overflow-hidden">
     <ChartCard
       :chartType="chartType"
       :chartData="chartData"
@@ -11,20 +12,14 @@
 </template>
 
 <script>
-import ChartCard from "./ChartCard.vue"; // Adjust path based on your location
+import ChartCard from "./ChartCard.vue";
 
 const type = "line";
 const options = {
   maintainAspectRatio: false,
   responsive: true,
   plugins: {
-    // title: {
-    //   display: true,
-    //   text: "ZikaZki"
-    // },
-    legend: {
-      display: false, // Hide the legend (dataset toggle button)
-    },
+    legend: { display: false },
     tooltip: {
       enabled: true,
       mode: "nearest",
@@ -54,13 +49,11 @@ export default {
   },
   data() {
     return {
-      // Replace with actual data
       chartType: type,
       chartData: {
         labels: null,
         datasets: [{
-          // label: 'My First Dataset',
-          data: null, // Replace with actual data
+          data: null,
           fill: true,
           borderCapStyle: 'round',
           backgroundColor: "rgba(101, 116, 205, 0.2)",
