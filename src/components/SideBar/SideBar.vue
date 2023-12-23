@@ -18,8 +18,9 @@
         <span class="text-lg font-bold">My Card</span>
         <button class="text-gray-400 text-lg font-bold tracking-widest hover:text-gray-500 hover:cursor-pointer">...</button>
       </div>
+      <!-- <CreditCard /> -->
       <CreditCard />
-
+      <!-- <CreditCard2 /> -->
     </div>
 
   </div>
@@ -28,9 +29,10 @@
 <script>
 import Percentage from "./Percentage.vue";
 import CreditCard from "./CreditCard.vue";
+import CreditCard2 from "./CreditCard2.vue";
 
 export default {
   name: "SideBar",
-  components: { Percentage, CreditCard },
+  components: { Percentage, CreditCard, CreditCard2 },
 };
 </script>

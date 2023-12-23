@@ -9,7 +9,7 @@
     </div>
 
     <!-- overflow-hidden here is necessary to hide the sidebar -->
-    <div class="overflow-hidden h-full pb-52 lg:pb-24">
+    <div class="overflow-hidden h-full pb-52 lg:pb-20">
       <div class="h-full transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
         <div class="flex h-full mt-4 lg:mt-10 lg:space-x-10">
           <div class="w-full h-full overflow-hidden flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-md">
