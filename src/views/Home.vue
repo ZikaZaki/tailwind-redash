@@ -41,10 +41,9 @@
             </Simplebar>
           </div>
 
-          <div class="flex flex-col items-center p-8 w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink bg-gray-500 rounded-xl">
-            <!-- sidebar -->
-            <CreditCard />
-            <!-- <div class="bg-gray-500 w-full h-full"></div> -->
+          <!-- sidebar -->
+          <div class="w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink">
+            <SideBar />
           </div>
         </div>
       </div>
@@ -53,21 +52,22 @@
 </template>
 
 <script>
-import CreditCard from "../components/CreditCard.vue";
 import CandlestickChart from "../components/CandlestickChart/CandlestickChart.vue";
 import LineChartsContainer from "../components/LineCharts/LineChartsContainer.vue";
 import Blog from "../components/Blog.vue";
 import SpentTimeChart from "../components/SpentTimeChart/SpentTimeChart.vue";
+import SideBar from "../components/SideBar/SideBar.vue";
 
 export default {
   name: 'Home',
-  components: { CreditCard, LineChartsContainer, CandlestickChart, Blog, SpentTimeChart },
+  components: { LineChartsContainer, CandlestickChart, Blog, SpentTimeChart, SideBar },
   data() {
     return {
       scrollbarOptions: { autoHide: true },
       showSidebar: false,
     }
   },
+
   methods: {
     handleScroll: function(e){
       // console.log(e);
