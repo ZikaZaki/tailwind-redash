@@ -2,15 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.simplebar-track {
-  background-color: transparent;
-}
-
-.simplebar-track.simplebar-vertical {
-  width: 10px;
-}
-
-.simplebar-track.simplebar-horizontal {
-  height: 10px;
-}

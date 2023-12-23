@@ -12,9 +12,8 @@
     <div class="overflow-hidden h-full pb-52 lg:pb-24">
       <div class="h-full transform lg:transform-none transition-all duration-300" :class="showSidebar ? '-translate-x-full' : ''">
         <div class="flex h-full mt-4 lg:mt-10 lg:space-x-10">
-          <div class="w-full h-full overflow-hidden flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-xl">
-            <Simplebar class="flex w-full h-full overflow-auto">
-
+          <div class="w-full h-full overflow-hidden flex-shrink-0 lg:w-3/4 lg:flex-shrink rounded-md">
+            <Simplebar class="flex w-full h-full overflow-auto" :="{...scrollbarOptions}" @scroll="handleScroll">
               <div class="flex space-x-4 lg:space-x-10"></div>
               
               <!-- Line-Charts Container -->
@@ -63,25 +62,9 @@ import SpentTimeChart from "../components/SpentTimeChart/SpentTimeChart.vue";
 export default {
   name: 'Home',
   components: { CreditCard, LineChartsContainer, CandlestickChart, Blog, SpentTimeChart },
-  data: function(){
+  data() {
     return {
-      scrollbarOptions: {
-        scrollbars: {
-          autoHide: "leave",
-          autoHideDelay: 800,
-          autoHideScrollbar: true,
-          clickScrolling: true,
-          dragScrolling: true,
-          snapHandle: true,
-          touchSupport: true,
-          paddingAbsolute: true,
-          syncCallbacks: true,
-          overflowBehavior: {
-            x: "hidden",
-            y: "scroll",
-          },
-        },
-      },
+      scrollbarOptions: { autoHide: true },
       showSidebar: false,
     }
   },
