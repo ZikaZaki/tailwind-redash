@@ -4,7 +4,7 @@
     <svg class="h-40 w-40 rounded-full bg-transparent">
       <circle
         class="text-blue-800 transition-all duration-700 ease-in-out"
-        stroke-width="4"
+        stroke-width="3"
         :stroke-dasharray="circumference"
         :stroke-dashoffset="circumference - percent / 100 * circumference"
         stroke-linecap="round"
