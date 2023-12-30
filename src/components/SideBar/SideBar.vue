@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col w-full h-full items-center rounded-xl p-4 bg-indigo-50 border border-indigo-100 space-y-4">
+  <div class="relative flex flex-col w-full h-full items-center rounded-xl p-4 bg-indigo-50 border border-indigo-100 space-y-3">
     <!-- Edit button -->
     <div class="absolute right-6 flex w-full justify-end">
       <svg  
