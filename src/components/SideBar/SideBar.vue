@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col w-full h-full items-center rounded-xl p-4 bg-indigo-50 border border-indigo-100 space-y-3">
+  <div class="relative flex flex-col w-full h-full items-center rounded-xl p-4 bg-indigo-50 border border-indigo-100 space-y-3 overflow-y-auto">
     <!-- Edit button -->
     <div class="absolute right-6 flex w-full justify-end">
       <svg  
@@ -13,26 +13,58 @@
       </svg>
     </div>
     <Percentage />
+    <!-- CreditCard Container -->
     <div class="flex flex-col w-full space-y-1">
       <div class="flex justify-between p-2">
         <span class="text-lg font-bold">My Card</span>
         <button class="text-gray-400 text-lg font-bold tracking-widest hover:text-gray-500 hover:cursor-pointer">...</button>
       </div>
-      <!-- <CreditCard /> -->
       <CreditCard />
-      <!-- <CreditCard2 /> -->
     </div>
-
+    <!-- Transactions Container -->
+    <div class="flex flex-col w-full h-80">
+      <div class="flex justify-between p-2">
+        <span class="text-lg font-bold">Transactions</span>
+        <button class="flex items-center justify-center border border-red-500 bg-red-600 h-8 w-8 rounded-lg text-white text-xl font-bold tracking-widest hover:bg-white hover:text-red-600 hover:cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+          </svg>
+        </button>
+      </div>
+      <Simplebar class="flex w-full h-full overflow-auto" :="{...scrollbarOptions}">
+        <TransactionsList :transactions="transactions" />
+      </Simplebar>
+    </div>
   </div>
 </template>
 
 <script>
 import Percentage from "./Percentage.vue";
 import CreditCard from "./CreditCard.vue";
-import CreditCard2 from "./CreditCard2.vue";
+import TransactionsList from "../Transactions/TransactionsList.vue";
 
 export default {
   name: "SideBar",
-  components: { Percentage, CreditCard, CreditCard2 },
+  components: { Percentage, CreditCard, TransactionsList },
+  data () {
+    return {
+      transactions: [],
+      scrollbarOptions: { autoHide: false },
+    }
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const response = await fetch("transactions-data.json");
+        const data = await response.json();
+        this.transactions = data;
+      } catch (error) {
+        console.log("Error fetching data: ", error);
+      }
+    }
+  },
+  mounted () {
+    this.fetchData();
+  }
 };
 </script>
