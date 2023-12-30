@@ -49,7 +49,7 @@ export default {
   data () {
     return {
       transactions: [],
-      scrollbarOptions: { autoHide: false },
+      scrollbarOptions: { autoHide: true },
     }
   },
   methods: {
