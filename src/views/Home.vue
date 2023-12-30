@@ -1,7 +1,5 @@
  <template>
   <div class="w-full h-full">
-    <!-- <div class="bg-gray-300 rounded-xl h-14">search</div> -->
-
     <div class="bg-gray-300 rounded-xl mt-4 lg:hidden p-2">
       <button class="block w-32 h-10 bg-blue-600 mx-auto" @click="showSidebar = !showSidebar">
         Toggle sidebar
@@ -29,22 +27,16 @@
                 <SpentTimeChart />
                 <Blog />
               </div>
-    
-    
-              <div class="flex-col space-y-8 space-x-4 lg:space-x-0 mt-4 lg:mt-10">
-                <!-- <div class="bg-yellow-300 rounded-xl h-52 w-full"></div> -->
-                <!-- <div class="bg-yellow-300 rounded-xl h-52 w-full"></div> -->
-                <!-- <SpentTimeChart /> -->
-                <!-- <div class="flex bg-white border-2 border-indigo-100 rounded-xl h-96 w-full">
-                </div> -->
-              </div>
             </Simplebar>
           </div>
 
           <!-- sidebar -->
           <div class="w-full flex-shrink-0 lg:w-1/4 lg:flex-shrink">
-            <SideBar />
+            <Simplebar class="flex w-full h-full overflow-auto" :="{...scrollbarOptions}">
+              <SideBar />
+            </Simplebar>
           </div>
+          
         </div>
       </div>
     </div>
