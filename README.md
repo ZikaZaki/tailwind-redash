@@ -1,3 +1,5 @@
+# Tailwind-Redash (Financial Dashboard)
+
 [![ViewCount](https://views.whatilearened.today/views/github/Naereen/StrapDown.js.svg)](https://github.com/ZikaZaki/tailwind-redash/)
 [![Downloads](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://github.com/ZikaZaki/tailwind-redash/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5ac0322e-45a3-469a-a23b-ac8f03aa0ccf/deploy-status)](https://app.netlify.com/sites/tailwind-redash/deploys)
@@ -5,9 +7,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork)](https://github.com/ZikaZaki/tailwind-redash/)
 [![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star)](https://github.com/ZikaZaki/tailwind-redash/)
 
-# Tailwind-Redash (Financial Dashboard)
+<!-- ![Project Logo](src/assets/logo.svg) -->
 
-![Project Logo](src/assets/logo.svg)
+<img src="src/assets/logo.svg" alt="Project Logo" width="100%" height="200">
 
 **tailwind-redsh** is a modern and responsive financial and payment dashboard built with Tailwind CSS and Vue 3. It provides users with a comprehensive overview of their financial data, including earnings, customers, visitors, and recent orders. Additionally, the dashboard offers detailed reports on transactions and payments made with credit cards.
 
